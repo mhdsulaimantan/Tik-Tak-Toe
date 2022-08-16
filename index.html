@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="res/style.css" rel="stylesheet">
+    <script src="res/script.js" defer></script>
+    <title>Tik-Tak-Toe</title>
+</head>
+
+<body>
+    <div class="names">
+        <input type="button" id="cancel-btn" value="X">
+        Please Enter the names of the players:
+        <div class="name-p1">
+            <label for="player1">Player 1:</label>
+            <input type="text" id="player1" placeholder="John" required>
+        </div>
+
+        <div class="name-p2" hidden>
+            <label for="player2">Player 2:</label>
+            <input type="text" id="player2" placeholder="Sam" required>
+        </div>
+
+        <input type="button" id="confirm-btn" value="Confirm">
+    </div>
+    <div class="container">
+        <header>
+            <h1>Tik-Tak-Toe</h1>
+            <div class="description">
+                This is a simple tik-tak-toe game. it is the second project for the JavaScript path on the Odin Project.
+            </div>
+            <div class="pick-player">
+                Pick your opponent:
+                <button id="player" title="Second Player" value="player">
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
+                    </svg>
+                </button>
+
+                <button id="bot" title="Bot" value="bot">
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M22 14H21C21 10.13 17.87 7 14 7H13V5.73C13.6 5.39 14 4.74 14 4C14 2.9 13.11 2 12 2S10 2.9 10 4C10 4.74 10.4 5.39 11 5.73V7H10C6.13 7 3 10.13 3 14H2C1.45 14 1 14.45 1 15V18C1 18.55 1.45 19 2 19H3V20C3 21.11 3.9 22 5 22H19C20.11 22 21 21.11 21 20V19H22C22.55 19 23 18.55 23 18V15C23 14.45 22.55 14 22 14M7.5 18C6.12 18 5 16.88 5 15.5C5 14.68 5.4 13.96 6 13.5L9.83 16.38C9.5 17.32 8.57 18 7.5 18M16.5 18C15.43 18 14.5 17.32 14.17 16.38L18 13.5C18.6 13.96 19 14.68 19 15.5C19 16.88 17.88 18 16.5 18Z" />
+                    </svg>
+                </button>
+            </div>
+            <br>
+            Enter players name. Then press play
+        </header>
+
+        <main>
+            <div class="start-restart">
+                <div id="start-icon" class="disabled" title="Play">
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
+                    </svg>
+                </div>
+                <div id="restart-icon" title="Restart">
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M12,4C14.1,4 16.1,4.8 17.6,6.3C20.7,9.4 20.7,14.5 17.6,17.6C15.8,19.5 13.3,20.2 10.9,19.9L11.4,17.9C13.1,18.1 14.9,17.5 16.2,16.2C18.5,13.9 18.5,10.1 16.2,7.7C15.1,6.6 13.5,6 12,6V10.6L7,5.6L12,0.6V4M6.3,17.6C3.7,15 3.3,11 5.1,7.9L6.6,9.4C5.5,11.6 5.9,14.4 7.8,16.2C8.3,16.7 8.9,17.1 9.6,17.4L9,19.4C8,19 7.1,18.4 6.3,17.6Z" />
+                    </svg>
+                </div>
+            </div>
+
+            <table class="game-box">
+                <tr id="0">
+                    <td id="0"></td>
+                    <td id="1"></td>
+                    <td id="2"></td>
+                </tr>
+                <tr id="1">
+                    <td id="0"></td>
+                    <td id="1"></td>
+                    <td id="2"></td>
+                </tr>
+                <tr id="2">
+                    <td id="0"></td>
+                    <td id="1"></td>
+                    <td id="2"></td>
+                </tr>
+            </table>
+
+            <div class="context">
+                <div id="round"></div>
+                <div id="player-turn"></div>
+            </div>
+            <div class="game-status" hidden></div>
+        </main>
+    </div>
+</body>
+
+</html>
